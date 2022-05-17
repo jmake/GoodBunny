@@ -26,6 +26,10 @@ ENV NB_USER="jovyan"
 WORKDIR /home/jovyan/work 
 RUN chown -R ${NB_USER} /home/jovyan/work
 
+ENV IPYNB_FILE="bunny.ipynb"
+COPY ./Actions/ /home/jovyan/work 
+
+
 ## jupyter password
 ## http://localhost:10000/?token=TOKEN_CODE
 ## jupyter server list
