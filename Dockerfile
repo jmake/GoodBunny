@@ -27,7 +27,7 @@ WORKDIR /home/jovyan/work
 RUN chown -R ${NB_USER} /home/jovyan/work
 
 ENV IPYNB_FILE="bunny.ipynb"
-COPY ./Actions/ /home/jovyan/work 
+COPY ./Actions /home/jovyan/work 
 
 
 ## jupyter password
