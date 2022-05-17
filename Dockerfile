@@ -12,24 +12,13 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 RUN apt-get --yes -qq update
 RUN apt-get --yes -qq install vim  
 
-## NODEJS 
-## from .vtkWebCore import *
-#RUN apt-get --yes -qq install libx11-dev 
+## VTK 
 RUN apt-get --yes -qq install libgl1-mesa-dev #   libEGL.so.1
 #RUN apt-get --yes -qq install libxrender-dev 
-
-## nodejs 16.x
-#RUN apt-get --yes -qq install curl 
-#RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-#RUN apt-get --yes -qq install nodejs 
-#RUN node  -v # v16.15.0
-#RUN python3 -m pip install vtk
-
-RUN conda install -c conda-forge nodejs
-
 RUN conda install -c conda-forge vtk
 RUN conda install -c anaconda numpy
- 
+
+RUN conda install -c conda-forge nodejs 
 
 ## JOVYAN  
 FROM notebook_setup AS notebook_execute 
