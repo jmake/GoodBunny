@@ -17,7 +17,6 @@ RUN apt-get --yes -qq install libgl1-mesa-dev #   libEGL.so.1
 #RUN apt-get --yes -qq install libxrender-dev 
 RUN conda install -c conda-forge vtk
 RUN conda install -c anaconda numpy
-
 RUN conda install -c conda-forge nodejs 
 
 ## JOVYAN  
@@ -27,12 +26,6 @@ WORKDIR /home/jovyan/work
 RUN chown -R ${NB_USER} /home/jovyan/work
 
 COPY ./ /home/jovyan/work/ 
-#COPY Actions/ /home/jovyan/work/ 
-#COPY Bunny/ /home/jovyan/work/ 
-#COPY Python/ /home/jovyan/work/ 
-#COPY ReactJS/ /home/jovyan/work/ 
-#COPY Sneezing/ /home/jovyan/work/ 
-#COPY bunny.ipynb/ /home/jovyan/work/ 
 
 ## jupyter password
 ## http://localhost:10000/?token=TOKEN_CODE
