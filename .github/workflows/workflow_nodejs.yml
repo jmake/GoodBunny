@@ -1,0 +1,41 @@
+name: BadBunny
+
+on: [push, workflow_dispatch]
+
+jobs:
+
+  build:
+  
+    runs-on: ubuntu-20.04
+      
+    steps:
+    
+    - name: Dowloading repository ... 
+      uses: actions/checkout@v2
+      
+    
+    - name: Executing Docker ...  
+      if: success()
+              
+      run: | 
+        echo "[WORFLOWS] I am here:'${PWD}' "
+        echo "[WORFLOWS] ls -la"
+        ls -la ${PWD}
+        echo "[WORFLOWS] "
+        
+        echo "[WORFLOWS] Repository is:'${{ github.workspace }}' "
+        echo "[WORFLOWS] ls -la "
+ 
+        bash ./Actions/workflow_nodejs.sh
+        
+        ls -la ${{ github.workspace }}        
+        echo "[WORFLOWS] DONE!!"
+        
+
+    - name: Saving artifacts ...
+      uses: actions/upload-artifact@v2
+      with:
+        name: FromContainer
+        if-no-files-found: error
+        path: ./index.html
+        retention-days: 1
