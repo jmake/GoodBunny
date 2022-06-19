@@ -6,8 +6,8 @@ on:
   push:
     paths-ignore :
       - 'CICD/**'
-      
- 
+      - '.github/workflows/workflow_nodejs.yml' 
+       
  
 jobs:
 
