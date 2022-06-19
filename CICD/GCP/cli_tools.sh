@@ -1,5 +1,7 @@
 
 
+gcloud version
+
 
 
 # REFERENCES :
