@@ -4,9 +4,12 @@ on:
   workflow_dispatch: 
   
   push:
+    paths :
+      - '.github/workflows/workflow_nodejs.yml' 
+      
     paths-ignore :
       - 'CICD/**'
-      - '.github/workflows/workflow_nodejs.yml' 
+      
        
  
 jobs:
