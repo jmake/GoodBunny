@@ -6,7 +6,7 @@ GCP_INIT()
   ${GCLOUD} --version 
   
 #  ${GCLOUD} iam service-accounts list 
-  ${GCLOUD} auth list
+#  ${GCLOUD} auth list
   
   ${GCLOUD} projects list
 }
