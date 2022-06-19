@@ -5,7 +5,7 @@ GCP_INIT()
   echo "[GCP_INIT]"
   ${GCLOUD} --version 
   
-  ${GCLOUD} iam service-accounts list 
+#  ${GCLOUD} iam service-accounts list 
   ${GCLOUD} auth list
   
   ${GCLOUD} projects list
