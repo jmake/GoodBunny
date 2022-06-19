@@ -1,7 +1,11 @@
 
+echo "[GCP] "
 
 gcloud version
 
+
+
+echo "[GCP] "
 
 
 # REFERENCES :
