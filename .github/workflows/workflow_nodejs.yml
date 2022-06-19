@@ -1,7 +1,14 @@
 name: BadBunny
 
-on: [push, workflow_dispatch]
-
+on: 
+  workflow_dispatch: 
+  
+  push:
+    paths-ignore :
+      - 'CICD/**'
+      
+ 
+ 
 jobs:
 
   build:
