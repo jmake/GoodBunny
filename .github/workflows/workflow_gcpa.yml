@@ -17,16 +17,36 @@ jobs:
       
     steps:
     
-      - name: Dowloading repository ... 
-        uses: actions/checkout@v3
+    - name: Dowloading repository ... 
+      uses: actions/checkout@v3
       
       
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v23
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v23
+      
 
-      - name: List all changed files
-        run: |
+    - name: List all changed files
+      run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
+          
+          
+    - name: Executing ...  
+      if: success()
+              
+      run: | 
+        echo "[WORFLOWS] I am here:'${PWD}' "
+        echo "[WORFLOWS] ls -la"
+        ls -la ${PWD}
+        echo "[WORFLOWS] "
+        
+        echo "[WORFLOWS] Repository path:'${{ github.workspace }}' "
+ 
+        bash ./CICD/GCP/cli_tools.sh 
+        
+        ls -la ${{ github.workspace }}        
+        echo "[WORFLOWS] DONE!!"          
+          
+          
