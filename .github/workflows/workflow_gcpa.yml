@@ -46,7 +46,7 @@ jobs:
  
         bash ./CICD/GCP/cli_tools.sh 
         
-        ls -la ${{ github.workspace }}        
+        #echo "[WORFLOWS] ", ls -la ${{ github.workspace }}        
         echo "[WORFLOWS] DONE!!"          
           
           
